@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell_functions.h"
 
 /**
  * replace_str - Calls functions to replace string into vars.
