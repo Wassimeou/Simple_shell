@@ -1,5 +1,5 @@
-#ifndef _main_h_
-#define _main_h_
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
 #include <stdio.h>
 #include <unistd.h>
@@ -132,7 +132,7 @@ char **_reallocdp(char **ptr, unsigned int old_size, unsigned int new_size);
 int _strcmp(char *s1, char *s2);
 char *_strchr(char *s, char c);
 
-/* input validation functions prototypes */
+/* Error handling functions prototypes */
 int dupl_chars(char *input, int i);
 int sep_oper_error(char *input, int i, char last);
 int first_character(char *input, int *i);
@@ -144,7 +144,7 @@ void looping_shll(shll_comm *datash);
 /* read_line function protytype */
 char *read_line(int *i_eof);
 
-/* env_variable function protytypes */
+/* Environmant variables function protytypes */
 int verify_vars(r_var **h, char *in, char *st, shll_comm *data);
 char *rpl_inp(r_var **head, char *input, char *new_input, int nlen);
 char *get_environ(const char *name, char **_env);
@@ -157,7 +157,7 @@ int compare_envname(const char *name_env, const char *name_ptr);
 void verify_env(r_var **h, char *in, shll_comm *data);
 char *replace_str(char *input, shll_comm *datash);
 
-/* shell loop functions protytypes */
+/* Split functions protytypes */
 char *swp_character(char *input, int bool);
 void move_nxt(sep_list **list_s, line_list **list_l, shll_comm *datash);
 int split_cmds(shll_comm *datash, char *input);
@@ -168,7 +168,7 @@ char **splt_ln(char *input);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 void get_ln(char **lineptr, size_t *n, char *buffer, size_t j);
 
-/* builtin commands functions protytypes */
+/* Execute functions protytypes */
 int execute_line(shll_comm *datash);
 int check_error_command(char *dir, shll_comm *datash);
 int command_exec(shll_comm *datash);
@@ -176,7 +176,7 @@ int check_cdir(char *path, int *i);
 char *_whch(char *cmd, char **_env);
 int is_exec(shll_comm *datash);
 
-/* directory functions protypes */
+/* cd functions protypes */
 void chandir_dor(shll_comm *datash);
 void cd_to_dist(shll_comm *datash);
 void changedir_prev(shll_comm *datash);
@@ -191,7 +191,7 @@ void set_datashell(shll_comm *datash, char **av);
 int (*get_bltn(char *cmd))(shll_comm *datash);
 int exit_sh(shll_comm *datash);
 
-/* input validation functions prototypes */
+/* Error handling functions prototypes */
 int get_err(shll_comm *datash, int eval);
 void get_sigint(int sig);
 char *error_get_alias(char **args);
@@ -204,7 +204,7 @@ char *err_gcd(shll_comm *datash);
 char *error_404(shll_comm *datash);
 char *err_shell_exit(shll_comm *datash);
 
-/*builtin commands help functions prototypes */
+/* Help functions prototypes */
 void disp_help_env(void);
 void disp_help_setenv(void);
 void display_unsetenv(void);
