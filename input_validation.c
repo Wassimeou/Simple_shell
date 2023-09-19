@@ -1,4 +1,4 @@
-#include "shell_functions.h"
+#include "main.h"
 
 /**
  * first_character - finds the index of the first non-whitespace character.

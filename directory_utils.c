@@ -1,4 +1,4 @@
-#include "shell_functions.h"
+#include "main.h"
 
 /**
  * changedir_shell - Changes the current directory.

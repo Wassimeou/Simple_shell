@@ -1,4 +1,4 @@
-#include "shell_functions.h"
+#include "main.h"
 
 /**
  * replace_str - Calls functions to replace string into vars.
@@ -127,6 +127,7 @@ void set_env(char *environ_name, char *val, shll_comm *data_sh)
 	data_sh->_env[i] = cp_info(environ_name, val);
 	data_sh->_env[i + 1] = NULL;
 }
+
 /**
  * _setenv - compares env variables names
  *           with the name passed.
@@ -136,16 +137,16 @@ void set_env(char *environ_name, char *val, shll_comm *data_sh)
  */
 int _setenv(shll_comm *data_sh)
 {
-    /* Check if either of the required arguments is missing. */
-    if (data_sh->args[1] == NULL || data_sh->args[2] == NULL)
-    {
-        get_err(data_sh, -1); /* Error handling: missing arguments. */
-        return (1);
-    }
 
-    set_env(data_sh->args[1], data_sh->args[2], data_sh);
+	if (data_sh->args[1] == NULL || data_sh->args[2] == NULL)
+	{
+		get_err(data_sh, -1);
+		return (1);
+	}
 
-    return (1);
+	set_env(data_sh->args[1], data_sh->args[2], data_sh);
+
+	return (1);
 }
 
 /**

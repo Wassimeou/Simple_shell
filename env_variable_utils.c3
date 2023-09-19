@@ -1,4 +1,4 @@
-#include "shell_functions.h"
+#include "main.h"
 
 /**
  * get_environ - Get the value of an environment variable.
@@ -42,21 +42,20 @@ char *get_environ(const char *envname, char **_env)
  */
 int display_env(shll_comm *data_sh)
 {
-    /* Initialize variables for iteration through environment variables. */
-    int l, m;
+	int l, m;
 
-    for (l = 0; data_sh->_env[l]; l++)
-    {
-        for (m = 0; data_sh->_env[l][m]; m++)
-            ;
+	for (l = 0; data_sh->_env[l]; l++)
+	{
 
-        write(STDOUT_FILENO, data_sh->_env[l], m); /* Print the environment variable. */
-        write(STDOUT_FILENO, "\n", 1); /* Print a newline character. */
-    }
+		for (m = 0; data_sh->_env[l][m]; m++)
+			;
 
-    data_sh->stat = 0; /* Set the status to indicate success. */
+		write(STDOUT_FILENO, data_sh->_env[l], m);
+		write(STDOUT_FILENO, "\n", 1);
+	}
+	data_sh->stat = 0;
 
-    return (1);
+	return (1);
 }
 
 /**

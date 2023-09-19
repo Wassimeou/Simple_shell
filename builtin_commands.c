@@ -1,4 +1,4 @@
-#include "shell_functions.h"
+#include "main.h"
 
 /**
  * _whch - Locates a command.

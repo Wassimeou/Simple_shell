@@ -1,4 +1,4 @@
-#include "shell_functions.h"
+#include "main.h"
 
 /**
  * verify_env - Checks if the typed variable is an environment variable.

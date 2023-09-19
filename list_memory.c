@@ -1,4 +1,4 @@
-#include "shell_functions.h"
+#include "main.h"
 
 /**
  * add_ln_nd_end - Adds a command line at the end of a line_list.
