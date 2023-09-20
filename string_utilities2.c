@@ -8,36 +8,36 @@
  */
 char *conv_itoa(int number)
 {
-    /* Declare an unsigned integer for calculations. */
-    unsigned int n1;
-    int len = get_length(number);
-    char *buff;
+	/* Declare an unsigned integer for calculations. */
+	unsigned int n1;
+	int len = get_length(number);
+	char *buff;
 
-    /* Allocate memory for the string. */
-    buff = malloc(sizeof(char) * (len + 1));
-    if (buff == 0)
-        return (NULL);
+	/* Allocate memory for the string. */
+	buff = malloc(sizeof(char) * (len + 1));
+	if (buff == 0)
+		return (NULL);
 
-    *(buff + len) = '\0';
+	*(buff + len) = '\0';
 
-    if (number < 0)
-    {
-        n1 = number * -1;
-        buff[0] = '-'; /* Add a minus sign for negative numbers. */
-    }
-    else
-        n1 = number;
+	if (number < 0)
+	{
+		n1 = number * -1;
+		buff[0] = '-'; /* Add a minus sign for negative numbers. */
+	}
+	else
+		n1 = number;
 
-    len--;
+	len--;
 
-    /* Convert the integer to a string. */
-    do {
-        *(buff + len) = (n1 % 10) + '0';
-        n1 = n1 / 10;
-        len--;
-    } while (n1 > 0);
+	/* Convert the integer to a string. */
+	do {
+	*(buff + len) = (n1 % 10) + '0';
+		n1 = n1 / 10;
+	len--;
+	} while (n1 > 0);
 
-    return (buff); /* Return the converted string. */
+	return (buff); /* Return the converted string. */
 }
 
 /**
