@@ -108,14 +108,13 @@ char *_strchr(char *str, char c)
  */
 char *_strcpy(char *dest, char *src)
 {
-    /* Declare a size_t variable for iteration. */
-    size_t a;
+	/* Declare a size_t variable for iteration. */
+	size_t a;
 
-    /* Iterate through the characters of the source string and copy to the destination. */
-    for (a = 0; src[a] != '\0'; a++)
-        dest[a] = src[a];
+	for (a = 0; src[a] != '\0'; a++)
+		dest[a] = src[a];
 
-    dest[a] = '\0'; /* Add a null terminator to the end of the destination string. */
+	dest[a] = '\0';
 
-    return (dest);
+	return (dest);
 }
