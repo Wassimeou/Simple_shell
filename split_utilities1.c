@@ -128,12 +128,12 @@ void add_nd(sep_list **hd_s, line_list **hd_l, char *inp)
  */
 char *read_line(int *int_eof)
 {
-    char *inp = NULL;
-    size_t buffersize = 0;
+	char *inp = NULL;
+	size_t buffersize = 0;
 
-    *int_eof = getline(&inp, &buffersize, stdin);
+	*int_eof = getline(&inp, &buffersize, stdin);
 
-    return (inp);
+	return (inp);
 }
 /**
  * free_value_ls - Frees a r_var list.
